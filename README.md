@@ -43,7 +43,7 @@ printable = json.dumps(files, indent=4)
 
 # Example
 
-`py -m filewalker -p path/to/dir -f md -o`
+`py -m filewalker -p path/to/dir -f md,txt -o`
 
 Search for all `md` and `txt` files within the path `path/to/dir` and it's
 subdirectories.
