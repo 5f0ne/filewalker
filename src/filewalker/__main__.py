@@ -4,7 +4,8 @@ import argparse
 
 from filewalker.Controller import Controller
 
-from filewalker.util.Util import Util
+from filewalker.args.Args import Args
+
 from filewalker.types.FileType import FileType
 from filewalker.search.Search import Search
 
@@ -15,9 +16,7 @@ def main(args_=None):
         args_ = sys.argv[1:]
 
     parser = argparse.ArgumentParser()
-    parser.add_argument("--path", "-p", type=str, default="", help="Path which shall be searched. If no path is provided, all available drives will be searched")
-    parser.add_argument("--files", "-f", type=Util.createFileList, default=[], help="Comma separated list of file type to be searched for: pdf,jpg,txt")
-    parser.add_argument("--overrideDefaultFileTypes", "-o", action=argparse.BooleanOptionalAction, help="If true, the default file types will be overwritten.")
+    Args.addArguments(parser)
     args = parser.parse_args()
 
 

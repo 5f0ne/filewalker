@@ -52,7 +52,7 @@ subdirectories.
 ################################################################################
 
 filewalker by 5f0
-Search connected hard drives for given files
+Searches hard drives/given path for files specified by file extensions
 
 Current working directory: path/to/filewalker
 
