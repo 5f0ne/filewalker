@@ -5,7 +5,7 @@ with open("README.md", "r") as r:
 
 setup(
     name="filewalker",
-    version="1.0.1",
+    version="1.0.2",
     author="5f0",
     url="https://github.com/5f0ne/filewalker",
     description="Searches hard drives/given path for files specified by file extension",

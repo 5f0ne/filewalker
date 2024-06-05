@@ -5,8 +5,7 @@ import argparse
 from filewalker.Controller import Controller
 
 from filewalker.args.Args import Args
-
-from filewalker.types.FileType import FileType
+from filewalker.util.Util import Util
 from filewalker.search.Search import Search
 
 
@@ -19,16 +18,8 @@ def main(args_=None):
     Args.addArguments(parser)
     args = parser.parse_args()
 
-
     # Create a unique list of file types to be searched
-    if(args.overrideDefaultFileTypes == True and len(args.files) > 0):
-        uniqueTypes = args.files
-    elif(args.overrideDefaultFileTypes == True and len(args.files) == 0):
-        print("Override flag will be ignored because no other file types are provided!")
-        uniqueTypes = FileType.getFileTypes([])
-    else:
-        uniqueTypes = FileType.getFileTypes(args.files)
-
+    uniqueTypes = Util.getUniqueFileList(args.overrideDefaultFileTypes, args.files)
 
     c = Controller()
     c.printHeader(args.path, uniqueTypes)
